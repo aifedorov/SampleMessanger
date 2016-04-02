@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D87EEC9569707C9DACEC657 /* libPods-SimpleMessenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E43E5BEC4F82DBC09B2E4F7D /* libPods-SimpleMessenger.a */; };
 		11DD8C211CAFBBA8006FFDC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD8C201CAFBBA8006FFDC1 /* main.m */; };
 		11DD8C241CAFBBA8006FFDC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD8C231CAFBBA8006FFDC1 /* AppDelegate.m */; };
 		11DD8C271CAFBBA8006FFDC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD8C261CAFBBA8006FFDC1 /* ViewController.m */; };
@@ -26,6 +27,9 @@
 		11DD8C2B1CAFBBA8006FFDC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11DD8C2E1CAFBBA8006FFDC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11DD8C301CAFBBA8006FFDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		470B4C9EFFF67EB942AB2360 /* Pods-SimpleMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMessenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMessenger/Pods-SimpleMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		E43E5BEC4F82DBC09B2E4F7D /* libPods-SimpleMessenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleMessenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED87A40B2FA300A1E6DB6C0A /* Pods-SimpleMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMessenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMessenger/Pods-SimpleMessenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D87EEC9569707C9DACEC657 /* libPods-SimpleMessenger.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				11DD8C1E1CAFBBA8006FFDC1 /* SimpleMessenger */,
 				11DD8C1D1CAFBBA8006FFDC1 /* Products */,
+				69E59776DABC223A0937BA95 /* Pods */,
+				D97D38DE90DCBAC4B657B19A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		69E59776DABC223A0937BA95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				470B4C9EFFF67EB942AB2360 /* Pods-SimpleMessenger.debug.xcconfig */,
+				ED87A40B2FA300A1E6DB6C0A /* Pods-SimpleMessenger.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D97D38DE90DCBAC4B657B19A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E43E5BEC4F82DBC09B2E4F7D /* libPods-SimpleMessenger.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11DD8C331CAFBBA8006FFDC1 /* Build configuration list for PBXNativeTarget "SimpleMessenger" */;
 			buildPhases = (
+				5378008C685320A236C9B567 /* Check Pods Manifest.lock */,
 				11DD8C181CAFBBA8006FFDC1 /* Sources */,
 				11DD8C191CAFBBA8006FFDC1 /* Frameworks */,
 				11DD8C1A1CAFBBA8006FFDC1 /* Resources */,
+				89B66C0AFE0AF996186DEE5F /* Embed Pods Frameworks */,
+				EE267DCB7AAC7EDDEF75FE3A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5378008C685320A236C9B567 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		89B66C0AFE0AF996186DEE5F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMessenger/Pods-SimpleMessenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE267DCB7AAC7EDDEF75FE3A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMessenger/Pods-SimpleMessenger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11DD8C181CAFBBA8006FFDC1 /* Sources */ = {
@@ -260,6 +335,7 @@
 		};
 		11DD8C341CAFBBA8006FFDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 470B4C9EFFF67EB942AB2360 /* Pods-SimpleMessenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleMessenger/Info.plist;
@@ -271,6 +347,7 @@
 		};
 		11DD8C351CAFBBA8006FFDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED87A40B2FA300A1E6DB6C0A /* Pods-SimpleMessenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleMessenger/Info.plist;
@@ -299,6 +376,7 @@
 				11DD8C351CAFBBA8006FFDC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
