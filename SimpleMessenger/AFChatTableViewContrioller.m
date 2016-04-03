@@ -7,8 +7,10 @@
 //
 
 #import "AFChatTableViewContrioller.h"
+#import "UIRefreshControl+AFNetworking.h"
 #import "AFPostTableViewCell.h"
 #import "Post.h"
+
 
 @interface AFChatTableViewContrioller () <UITableViewDataSource, UITableViewDelegate>
 
@@ -21,9 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.refreshControl addTarget:self action:@selector(loadPosts) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = [[UIRefreshControl alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 100.0f)];
+    [self.refreshControl addTarget:self action:@selector(reloadPosts) forControlEvents:UIControlEventValueChanged];
     
-    [self loadPosts];
+    [self reloadPosts];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,19 +36,15 @@
 
 #pragma mark - Private methods
 
-- (void)loadPosts {
+- (void)reloadPosts {
+    NSURLSessionTask *task = [Post globalTimelinePostsWithBlock:^(NSArray *posts, NSError *error) {
+        if (!error) {
+            self.posts = posts;
+            [self.tableView reloadData];
+        }
+    }];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [Post globalTimelinePostsWithBlock:^(NSArray *posts, NSError *error) {
-            if (!error) {
-                self.posts = posts;
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.tableView reloadData];
-                });
-            }
-        }];
-    });
+    [self.refreshControl setRefreshingWithStateOfTask:task];
 }
 
 #pragma mark - UITableViewDataSource
