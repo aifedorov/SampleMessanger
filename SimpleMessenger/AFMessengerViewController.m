@@ -24,7 +24,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 static NSString *cellIdentifier = @"Cell";
 
 #pragma mark - UITableViewDataSource

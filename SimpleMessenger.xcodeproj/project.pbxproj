@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D87EEC9569707C9DACEC657 /* libPods-SimpleMessenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E43E5BEC4F82DBC09B2E4F7D /* libPods-SimpleMessenger.a */; };
 		1190A5B91CB12562004ADE0E /* AFMessengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1190A5B81CB12562004ADE0E /* AFMessengerViewController.m */; };
+		1190A5BF1CB12DAC004ADE0E /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1190A5BE1CB12DAC004ADE0E /* AFAppDotNetAPIClient.m */; };
 		11DD8C211CAFBBA8006FFDC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD8C201CAFBBA8006FFDC1 /* main.m */; };
 		11DD8C241CAFBBA8006FFDC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD8C231CAFBBA8006FFDC1 /* AppDelegate.m */; };
 		11DD8C271CAFBBA8006FFDC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD8C261CAFBBA8006FFDC1 /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* Begin PBXFileReference section */
 		1190A5B71CB12562004ADE0E /* AFMessengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMessengerViewController.h; sourceTree = "<group>"; };
 		1190A5B81CB12562004ADE0E /* AFMessengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMessengerViewController.m; sourceTree = "<group>"; };
+		1190A5BD1CB12DAC004ADE0E /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
+		1190A5BE1CB12DAC004ADE0E /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
 		11DD8C1C1CAFBBA8006FFDC1 /* SimpleMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DD8C201CAFBBA8006FFDC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11DD8C221CAFBBA8006FFDC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				11DD8C1F1CAFBBA8006FFDC1 /* Supporting Files */,
 				1190A5B71CB12562004ADE0E /* AFMessengerViewController.h */,
 				1190A5B81CB12562004ADE0E /* AFMessengerViewController.m */,
+				1190A5BD1CB12DAC004ADE0E /* AFAppDotNetAPIClient.h */,
+				1190A5BE1CB12DAC004ADE0E /* AFAppDotNetAPIClient.m */,
 			);
 			path = SimpleMessenger;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				11DD8C271CAFBBA8006FFDC1 /* ViewController.m in Sources */,
 				1190A5B91CB12562004ADE0E /* AFMessengerViewController.m in Sources */,
 				11DD8C241CAFBBA8006FFDC1 /* AppDelegate.m in Sources */,
+				1190A5BF1CB12DAC004ADE0E /* AFAppDotNetAPIClient.m in Sources */,
 				11DD8C211CAFBBA8006FFDC1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
