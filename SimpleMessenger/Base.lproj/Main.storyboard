@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-712.5" y="367"/>
         </scene>
-        <!--Chat Table View Contrioller-->
+        <!--Chat-->
         <scene sceneID="Ef9-v8-PHb">
             <objects>
                 <tableViewController id="lcW-dY-abR" customClass="AFChatTableViewContrioller" sceneMemberID="viewController">
@@ -61,12 +61,84 @@
                             <outlet property="delegate" destination="lcW-dY-abR" id="eaz-tz-Va7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aZ6-zV-Tdv"/>
+                    <navigationItem key="navigationItem" title="Chat" id="aZ6-zV-Tdv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="xnp-G3-7Za">
+                            <connections>
+                                <action selector="createMessege:" destination="lcW-dY-abR" id="Ff2-Td-nvQ"/>
+                                <segue destination="Ev1-vp-E1X" kind="show" id="31K-0w-NGf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbn-Dn-OPf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="63" y="367"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="EFM-KK-OxI">
+            <objects>
+                <viewController id="Ev1-vp-E1X" customClass="AFCreateMessegeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lej-oX-gnD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ame-a4-SfW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sr5-LN-rVv">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="8yp-yG-Y8p">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ame-a4-SfW" firstAttribute="top" secondItem="8yp-yG-Y8p" secondAttribute="bottom" constant="450" id="EDd-vt-LA8"/>
+                            <constraint firstItem="8yp-yG-Y8p" firstAttribute="top" secondItem="lej-oX-gnD" secondAttribute="bottom" id="XLx-ig-CIT"/>
+                            <constraint firstItem="8yp-yG-Y8p" firstAttribute="leading" secondItem="sr5-LN-rVv" secondAttribute="leading" id="ffb-jG-rcO"/>
+                            <constraint firstAttribute="trailing" secondItem="8yp-yG-Y8p" secondAttribute="trailing" id="lrX-xC-8Iv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8yp-yG-Y8p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="XLx-ig-CIT"/>
+                                <exclude reference="ffb-jG-rcO"/>
+                                <exclude reference="lrX-xC-8Iv"/>
+                                <exclude reference="EDd-vt-LA8"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="8yp-yG-Y8p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="XLx-ig-CIT"/>
+                                <include reference="ffb-jG-rcO"/>
+                                <include reference="lrX-xC-8Iv"/>
+                                <include reference="EDd-vt-LA8"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Message" id="qrr-bN-hBv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="LJl-xj-Idk">
+                            <connections>
+                                <action selector="cancelCreateMessage:" destination="Ev1-vp-E1X" id="0yJ-cb-RqV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Send" id="Iuf-RT-B2l">
+                            <connections>
+                                <action selector="sendMessage:" destination="Ev1-vp-E1X" id="y9a-ow-YCf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q0Q-Lf-LuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865.5" y="367"/>
         </scene>
     </scenes>
 </document>

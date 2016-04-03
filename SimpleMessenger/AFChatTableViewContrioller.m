@@ -34,6 +34,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Actions
+
+- (IBAction)createMessege:(id)sender {
+    
+}
+
+
 #pragma mark - Private methods
 
 - (void)reloadPosts {
