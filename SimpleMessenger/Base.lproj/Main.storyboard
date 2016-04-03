@@ -1,25 +1,126 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7aa-GO-DTn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="CDH-IO-jAe">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <navigationController id="7aa-GO-DTn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IXV-Pc-3sR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Wxm-7K-WBW" kind="relationship" relationship="rootViewController" id="SnQ-61-NEO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E2w-pI-JdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-712.5" y="367"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="ccn-Sh-Scd">
+            <objects>
+                <viewController id="Wxm-7K-WBW" customClass="AFMessengerViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="iQe-Cj-c7k"/>
+                        <viewControllerLayoutGuide type="bottom" id="xUv-Vk-ZH7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="lLU-eb-tkb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9mM-cM-1A4">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCZ-0P-7gE">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Send"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mep-RA-9JX">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="6LZ-fI-TAA">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6LZ-fI-TAA" id="KVR-Mu-TRs">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wxm-7K-WBW" id="iIL-ms-WyA"/>
+                                    <outlet property="delegate" destination="Wxm-7K-WBW" id="aGt-Fl-Vbj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xUv-Vk-ZH7" firstAttribute="top" secondItem="aCZ-0P-7gE" secondAttribute="bottom" constant="8" id="KTA-Na-wBO"/>
+                            <constraint firstItem="Mep-RA-9JX" firstAttribute="leading" secondItem="lLU-eb-tkb" secondAttribute="leading" id="MSX-zn-dwr"/>
+                            <constraint firstItem="aCZ-0P-7gE" firstAttribute="top" secondItem="Mep-RA-9JX" secondAttribute="bottom" constant="10" id="PEm-mz-vWt"/>
+                            <constraint firstItem="Mep-RA-9JX" firstAttribute="top" secondItem="iQe-Cj-c7k" secondAttribute="bottom" constant="20" id="QY1-Jq-mqn"/>
+                            <constraint firstAttribute="trailing" secondItem="aCZ-0P-7gE" secondAttribute="trailing" constant="8" id="RKe-EE-rrD"/>
+                            <constraint firstItem="Mep-RA-9JX" firstAttribute="leading" secondItem="lLU-eb-tkb" secondAttribute="leading" id="bCw-QA-OwR"/>
+                            <constraint firstItem="aCZ-0P-7gE" firstAttribute="leading" secondItem="9mM-cM-1A4" secondAttribute="trailing" constant="10" id="mfM-fn-UHP"/>
+                            <constraint firstItem="9mM-cM-1A4" firstAttribute="centerY" secondItem="aCZ-0P-7gE" secondAttribute="centerY" id="oDs-vX-LUt"/>
+                            <constraint firstAttribute="trailing" secondItem="Mep-RA-9JX" secondAttribute="trailing" id="qaL-H2-bAa"/>
+                            <constraint firstItem="9mM-cM-1A4" firstAttribute="leading" secondItem="lLU-eb-tkb" secondAttribute="leading" constant="8" id="wHm-5k-Tpc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="9mM-cM-1A4"/>
+                                <exclude reference="aCZ-0P-7gE"/>
+                                <exclude reference="Mep-RA-9JX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="KTA-Na-wBO"/>
+                                <exclude reference="oDs-vX-LUt"/>
+                                <exclude reference="wHm-5k-Tpc"/>
+                                <exclude reference="PEm-mz-vWt"/>
+                                <exclude reference="RKe-EE-rrD"/>
+                                <exclude reference="mfM-fn-UHP"/>
+                                <exclude reference="MSX-zn-dwr"/>
+                                <exclude reference="QY1-Jq-mqn"/>
+                                <exclude reference="bCw-QA-OwR"/>
+                                <exclude reference="qaL-H2-bAa"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="9mM-cM-1A4"/>
+                                <include reference="aCZ-0P-7gE"/>
+                                <include reference="Mep-RA-9JX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="KTA-Na-wBO"/>
+                                <include reference="oDs-vX-LUt"/>
+                                <include reference="wHm-5k-Tpc"/>
+                                <include reference="PEm-mz-vWt"/>
+                                <include reference="RKe-EE-rrD"/>
+                                <include reference="mfM-fn-UHP"/>
+                                <include reference="MSX-zn-dwr"/>
+                                <include reference="QY1-Jq-mqn"/>
+                                <include reference="bCw-QA-OwR"/>
+                                <include reference="qaL-H2-bAa"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Chat" id="MQN-Vl-mDE"/>
+                    <connections>
+                        <outlet property="tableView" destination="Mep-RA-9JX" id="Xdb-YL-6db"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ppu-At-P6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="48" y="367"/>
         </scene>
     </scenes>
 </document>
