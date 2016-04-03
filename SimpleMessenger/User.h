@@ -10,7 +10,9 @@
 
 @interface User : NSObject
 
-@property (readonly, nonatomic, assign) NSUInteger userID;
-@property (readonly, nonatomic, copy) NSString *username;
+@property (readwrite, nonatomic, assign) NSUInteger userID;
+@property (readwrite, nonatomic, strong) NSString *username;
+
+- (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
 @end

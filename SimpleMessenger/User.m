@@ -10,4 +10,16 @@
 
 @implementation User
 
+- (instancetype)initWithAttributes:(NSDictionary *)attributes {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+    self.userID = (NSUInteger)[[attributes valueForKeyPath:@"id"] integerValue];
+    self.username = [attributes valueForKeyPath:@"username"];
+    
+    return self;
+}
+
 @end
