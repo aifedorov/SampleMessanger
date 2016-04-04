@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AFCreateMessegeViewController : UIViewController
+@interface AFCreateMessageViewController : UIViewController
 
 @end

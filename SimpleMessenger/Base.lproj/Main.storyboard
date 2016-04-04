@@ -26,15 +26,19 @@
             <objects>
                 <tableViewController id="lcW-dY-abR" customClass="AFChatTableViewContrioller" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mW2-Tv-zgq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="910-Xz-6Ch" detailTextLabel="CUk-rR-Teq" style="IBUITableViewCellStyleValue1" id="FxR-jw-0mq" customClass="AFPostTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FxR-jw-0mq" id="yFS-VM-yjL">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="910-Xz-6Ch">
+                                            <rect key="frame" x="15" y="11" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -44,6 +48,7 @@
                                             </variation>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CUk-rR-Teq">
+                                            <rect key="frame" x="541" y="11" width="44" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,19 +83,23 @@
         <!--Message-->
         <scene sceneID="EFM-KK-OxI">
             <objects>
-                <viewController id="Ev1-vp-E1X" customClass="AFCreateMessegeViewController" sceneMemberID="viewController">
+                <viewController id="Ev1-vp-E1X" customClass="AFCreateMessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lej-oX-gnD"/>
                         <viewControllerLayoutGuide type="bottom" id="Ame-a4-SfW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sr5-LN-rVv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="8yp-yG-Y8p">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ev1-vp-E1X" id="lDw-aO-POq"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,10 +114,10 @@
                                 <exclude reference="8yp-yG-Y8p"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="EDd-vt-LA8"/>
                                 <exclude reference="XLx-ig-CIT"/>
                                 <exclude reference="ffb-jG-rcO"/>
                                 <exclude reference="lrX-xC-8Iv"/>
-                                <exclude reference="EDd-vt-LA8"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -116,10 +125,10 @@
                                 <include reference="8yp-yG-Y8p"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="EDd-vt-LA8"/>
                                 <include reference="XLx-ig-CIT"/>
                                 <include reference="ffb-jG-rcO"/>
                                 <include reference="lrX-xC-8Iv"/>
-                                <include reference="EDd-vt-LA8"/>
                             </mask>
                         </variation>
                     </view>
@@ -129,12 +138,15 @@
                                 <action selector="cancelCreateMessage:" destination="Ev1-vp-E1X" id="0yJ-cb-RqV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Send" id="Iuf-RT-B2l">
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="Iuf-RT-B2l">
                             <connections>
                                 <action selector="sendMessage:" destination="Ev1-vp-E1X" id="y9a-ow-YCf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="messageTextView" destination="8yp-yG-Y8p" id="8yK-NC-uFp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0Q-Lf-LuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
