@@ -11,7 +11,6 @@
 #import "AFPostTableViewCell.h"
 #import "Post.h"
 
-
 @interface AFChatTableViewContrioller () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *posts;
@@ -25,8 +24,12 @@
     
     self.refreshControl = [[UIRefreshControl alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 100.0f)];
     [self.refreshControl addTarget:self action:@selector(reloadPosts) forControlEvents:UIControlEventValueChanged];
-    
     [self reloadPosts];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +70,22 @@ static NSString *cellIdentifier = @"Cell";
     cell.post = self.posts[(NSUInteger)indexPath.row];
     
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
 }
 
 @end

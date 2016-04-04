@@ -46,8 +46,6 @@ static NSString *placeholder = @"Message text";
     
     if (![self.messageTextView.text isEqualToString:placeholder] && self.messageTextView.text.length != 0) {
         
-        [self sendMessage];
-        
         Post *post = [[Post alloc] init];
         post.text = self.messageTextView.text;
         
@@ -89,12 +87,6 @@ static NSString *placeholder = @"Message text";
 - (void) handleEditing {
     
     [self.view endEditing:YES];
-}
-
-#pragma mark - Private methods
-
--(void) sendMessage {
-    
 }
 
 @end

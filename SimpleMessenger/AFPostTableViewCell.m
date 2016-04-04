@@ -15,8 +15,8 @@
 - (void)setPost:(Post *)post {
     _post = post;
     
-    self.textLabel.text = _post.user.username;
-    self.detailTextLabel.text = _post.text;
+    self.usernameLabel.text = [NSString stringWithFormat:@"%@:",_post.user.username];
+    self.textMessageLabel.text = _post.text;
 }
 
 @end
