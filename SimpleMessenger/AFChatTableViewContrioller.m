@@ -34,17 +34,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Actions
-
-- (IBAction)createMessege:(id)sender {
-    
-}
-
-
 #pragma mark - Private methods
 
 - (void)reloadPosts {
-    NSURLSessionTask *task = [Post globalTimelinePostsWithBlock:^(NSArray *posts, NSError *error) {
+    NSURLSessionTask *task = [Post getPostsGlobalStream:^(NSArray *posts, NSError *error) {
         if (!error) {
             self.posts = posts;
             [self.tableView reloadData];

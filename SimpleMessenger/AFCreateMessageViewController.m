@@ -7,6 +7,7 @@
 //
 
 #import "AFCreateMessageViewController.h"
+#import "Post.h"
 
 @interface AFCreateMessageViewController () <UITextViewDelegate>
 
@@ -46,6 +47,12 @@ static NSString *placeholder = @"Message text";
     if (![self.messageTextView.text isEqualToString:placeholder] && self.messageTextView.text.length != 0) {
         
         [self sendMessage];
+        
+        Post *post = [[Post alloc] init];
+        post.text = self.messageTextView.text;
+        
+        [Post createPostGlobalStream:post];
+        
         [self.navigationController popViewControllerAnimated:YES];
         
     } else {
